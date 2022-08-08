@@ -5,10 +5,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
     android:layout_margin="10dp"
-    app:cardCornerRadius="10dp">
+    app:cardCornerRadius="10dp"
+    android:elevation="@dimen/cardview_default_elevation">
 
     <RelativeLayout
-        android:layout_margin="10dp"
+        android:layout_margin="12dp"
         android:padding="10dp"
         android:background="#66a6ff"
         android:layout_width="match_parent"

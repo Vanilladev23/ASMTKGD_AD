@@ -5,13 +5,14 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.asm2_tkgd.R;
 import com.example.asm2_tkgd.dao.KhoanThuChiDAO;
@@ -19,7 +20,7 @@ import com.example.asm2_tkgd.model.Loai;
 
 import java.util.ArrayList;
 
-public class LoaiChiAdapter extends BaseAdapter {
+public class LoaiChiAdapter extends RecyclerView.Adapter<LoaiChiAdapter.ViewHolder> {
     private ArrayList<Loai> list;
     private Context context;
     private KhoanThuChiDAO khoanThuChiDAO;
@@ -30,55 +31,41 @@ public class LoaiChiAdapter extends BaseAdapter {
         this.khoanThuChiDAO = khoanThuChiDAO;
     }
 
-    @Override
-    public int getCount() {
-        return list.size();
-    }
-
-    @Override
-    public Object getItem(int i) {
-        return list.get(i);
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return i;
-    }
-
-    public static class ViewOfItem {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtTen;
         ImageView ivSua, ivXoa;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            txtTen = itemView.findViewById(R.id.txtTen);
+            ivSua = itemView.findViewById(R.id.ivSua);
+            ivXoa = itemView.findViewById(R.id.ivXoa);
+        }
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = ((Activity)context).getLayoutInflater();
+        View view = inflater.inflate(R.layout.item_loaichi, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        LayoutInflater inflater = ((Activity)context).getLayoutInflater();
-        ViewOfItem viewOfItem;
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        if (view == null) {
-            viewOfItem = new ViewOfItem();
-            view = inflater.inflate(R.layout.item_loaichi, viewGroup, false);
-            viewOfItem.txtTen = view.findViewById(R.id.txtTen);
-            viewOfItem.ivSua = view.findViewById(R.id.ivSua);
-            viewOfItem.ivXoa = view.findViewById(R.id.ivXoa);
-            view.setTag(viewOfItem);
-        } else {
-            viewOfItem = (ViewOfItem) view.getTag();
-        }
+        holder.txtTen.setText(list.get(holder.getAdapterPosition()).getTenloai());
 
-        viewOfItem.txtTen.setText(list.get(i).getTenloai());
-
-        viewOfItem.ivSua.setOnClickListener(new View.OnClickListener() {
+        holder.ivSua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialogSuaLoaiChi(list.get(i));
+                showDialogSuaLoaiChi(list.get(holder.getAdapterPosition()));
             }
         });
 
-        viewOfItem.ivXoa.setOnClickListener(new View.OnClickListener() {
+        holder.ivXoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int idCanXoa = list.get(i).getMaloai();
+                int idCanXoa = list.get(holder.getAdapterPosition()).getMaloai();
                 if (khoanThuChiDAO.xoaLoaiThuChi(idCanXoa)) {
                     Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();
                     reLoadData();
@@ -88,7 +75,16 @@ public class LoaiChiAdapter extends BaseAdapter {
             }
         });
 
-        return view;
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return i;
+    }
+
+    @Override
+    public int getItemCount() {
+        return list.size();
     }
 
     private void showDialogSuaLoaiChi(Loai loai) {

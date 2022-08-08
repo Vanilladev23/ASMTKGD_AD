@@ -5,13 +5,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.asm2_tkgd.R;
 import com.example.asm2_tkgd.adapter.LoaiChiAdapter;
@@ -22,7 +23,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import java.util.ArrayList;
 
 public class LoaiChiFragment extends Fragment {
-    ListView listViewLoaiChi;
+    RecyclerView listViewLoaiChi;
     FloatingActionButton floatAdd;
     LoaiChiAdapter adapter;
     ArrayList<Loai> list;
@@ -50,6 +51,9 @@ public class LoaiChiFragment extends Fragment {
     private void loadData() {
         list = khoanThuChiDAO.getDSLoai("chi");
 
+        // Adapter
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getContext());
+        listViewLoaiChi.setLayoutManager(linearLayoutManager);
         adapter = new LoaiChiAdapter(list, getContext(), khoanThuChiDAO);
         listViewLoaiChi.setAdapter(adapter);
     }

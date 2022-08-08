@@ -5,7 +5,6 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SimpleAdapter;
@@ -13,7 +12,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.asm2_tkgd.R;
 import com.example.asm2_tkgd.dao.KhoanThuChiDAO;
@@ -22,7 +23,7 @@ import com.example.asm2_tkgd.model.KhoanThuChi;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class KhoanChiAdapter extends BaseAdapter {
+public class KhoanChiAdapter extends RecyclerView.Adapter<KhoanChiAdapter.ViewHolder> {
     private ArrayList<KhoanThuChi> list;
     private Context context;
     private KhoanThuChiDAO khoanThuChiDAO;
@@ -35,57 +36,43 @@ public class KhoanChiAdapter extends BaseAdapter {
         this.listSpinner = listSpinner;
     }
 
-    @Override
-    public int getCount() {
-        return list.size();
-    }
-
-    @Override
-    public Object getItem(int i) {
-        return list.get(i);
-    }
-
-    @Override
-    public long getItemId(int i) {
-        return i;
-    }
-
-    public static class ViewOfItem {
+    public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView txtTen, txtTien;
         ImageView ivSua, ivXoa;
+        public ViewHolder(@NonNull View itemView) {
+            super(itemView);
+            txtTen = itemView.findViewById(R.id.txtTen);
+            txtTien = itemView.findViewById(R.id.txtTien);
+            ivSua = itemView.findViewById(R.id.ivSua);
+            ivXoa = itemView.findViewById(R.id.ivXoa);
+        }
+    }
+
+    @NonNull
+    @Override
+    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+        LayoutInflater inflater = ((Activity)context).getLayoutInflater();
+        View view = inflater.inflate(R.layout.item_khoanchi, parent, false);
+        return new ViewHolder(view);
     }
 
     @Override
-    public View getView(int i, View view, ViewGroup viewGroup) {
-        LayoutInflater inflater = ((Activity)context).getLayoutInflater();
-        ViewOfItem viewOfItem;
+    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
 
-        if (view == null) {
-            viewOfItem = new ViewOfItem();
-            view = inflater.inflate(R.layout.item_khoanchi, viewGroup, false);
-            viewOfItem.txtTen = view.findViewById(R.id.txtTen);
-            viewOfItem.txtTien = view.findViewById(R.id.txtTien);
-            viewOfItem.ivSua = view.findViewById(R.id.ivSua);
-            viewOfItem.ivXoa = view.findViewById(R.id.ivXoa);
-            view.setTag(viewOfItem);
-        } else {
-            viewOfItem = (ViewOfItem) view.getTag();
-        }
+        holder.txtTen.setText(list.get(holder.getAdapterPosition()).getTenloai());
+        holder.txtTien.setText(String.valueOf(list.get(holder.getAdapterPosition()).getTien()));
 
-        viewOfItem.txtTen.setText(list.get(i).getTenloai());
-        viewOfItem.txtTien.setText(String.valueOf(list.get(i).getTien()));
-
-        viewOfItem.ivSua.setOnClickListener(new View.OnClickListener() {
+        holder.ivSua.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                showDialogSuaKhoanThuChi(list.get(i));
+                showDialogSuaKhoanThuChi(list.get(holder.getAdapterPosition()));
             }
         });
 
-        viewOfItem.ivXoa.setOnClickListener(new View.OnClickListener() {
+        holder.ivXoa.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int makhoan = list.get(i).getMakhoan();
+                int makhoan = list.get(holder.getAdapterPosition()).getMakhoan();
                 if (khoanThuChiDAO.xoaKhoanThuChi(makhoan)) {
                     Toast.makeText(context, "Xóa thành công", Toast.LENGTH_SHORT).show();
                     reLoadData();
@@ -95,7 +82,16 @@ public class KhoanChiAdapter extends BaseAdapter {
             }
         });
 
-        return view;
+    }
+
+    @Override
+    public long getItemId(int i) {
+        return i;
+    }
+
+    @Override
+    public int getItemCount() {
+        return list.size();
     }
 
     private void showDialogSuaKhoanThuChi(KhoanThuChi khoanThuChi) {

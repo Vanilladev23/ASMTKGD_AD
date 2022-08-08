@@ -4,11 +4,12 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="horizontal"
-    android:layout_margin="10dp"
-    app:cardCornerRadius="10dp">
+    android:layout_margin="12dp"
+    app:cardCornerRadius="10dp"
+    android:elevation="@dimen/cardview_default_elevation">
 
     <RelativeLayout
-        android:layout_margin="10dp"
+        android:layout_margin="12dp"
         android:padding="10dp"
         android:background="#00BCD4"
         android:layout_width="match_parent"

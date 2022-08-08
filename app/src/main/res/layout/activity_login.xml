@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:padding="4dp"
+    tools:context=".activities.LoginActivity">
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:background="#03A9F4"
+        android:text="Đăng nhập hệ thống"
+        android:textStyle="bold"
+        android:textColor="#BF000000"
+        android:textSize="22sp"
+        android:gravity="center"/>
+
+
+    <EditText
+        android:id="@+id/editTextUsername"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:hint="Tài khoản"
+        />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="40sp"
+        android:hint="Mật khẩu"
+        android:inputType="textPassword"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="10"
+        >
+        <Button
+            android:id="@+id/buttonLamlai"
+            android:layout_marginRight="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#03A9F4"
+            android:textColor="#BF000000"
+            android:layout_weight="4"
+            android:textStyle="bold"
+            android:text="Làm lại"/>
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:textStyle="bold"
+            android:backgroundTint="#03A9F4"
+            android:textColor="#BF000000"
+            android:text="Login" />
+
+    </LinearLayout>
+
+</LinearLayout>

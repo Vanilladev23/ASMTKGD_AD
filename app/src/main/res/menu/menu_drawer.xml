@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/item_revenue"
+        android:title="@string/kho_n_thu1"
+        android:icon="@drawable/revenue"/>
+
+    <item
+        android:id="@+id/item_expenses"
+        android:title="@string/kho_n_chi"
+        android:icon="@drawable/expense"/>
+
+    <item
+        android:id="@+id/item_statistical"
+        android:title="@string/th_ng_k"
+        android:icon="@drawable/statistical"/>
+
+    <item android:title="@string/kh_c">
+        <menu>
+            <item
+                android:id="@+id/item_introduce"
+                android:title="@string/gi_i_thi_u2"
+                android:icon="@drawable/introduce"/>
+
+            <item
+                android:id="@+id/item_logout"
+                android:title="@string/tho_t"
+                android:icon="@drawable/logout2"/>
+        </menu>
+    </item>
+</menu>

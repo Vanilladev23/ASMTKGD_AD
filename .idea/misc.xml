@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.109" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/activity_login.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/activity_main.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/chi_fragment.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/dialog_suakhoanchi.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/dialog_suakhoanthu.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/dialog_sualoaichi.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/dialog_sualoaithu.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/dialog_themkhoanchi.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/dialog_themkhoanthu.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/dialog_themloaichi.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/dialog_themloaithu.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/gioithieu_fragment.xml" value="0.134765625" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/header_view_layout.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/item_khoanchi.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/item_khoanthu.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/item_loaichi.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/item_loaithu.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/khoanchi_fragment.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/khoanthu_fragment.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/loaichi_fragment.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/loaithu_fragment.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/thongke_fragment.xml" value="0.17864583333333334" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/thu_fragment.xml" value="0.1796875" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/layout/toolbar.xml" value="0.14743589743589744" />
+        <entry key="..\:/Users/Administrator/AndroidStudioProjects/ASM2_TKGD/app/src/main/res/menu/menu_drawer.xml" value="0.1796875" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">ASM2_TKGD</string>
+    <string name="kho_n_thu">Khoản Thu</string>
+    <string name="kho_n_chi">Khoản chi</string>
+    <string name="gi_i_thi_u">Giới Thiệu</string>
+    <string name="kh_c">Khác</string>
+    <string name="tho_t">Thoát</string>
+    <string name="kho_n_thu1">Khoản thu</string>
+    <string name="gi_i_thi_u2">Giới Thiệu</string>
+    <string name="th_ng_k">Thống kê</string>
+    <string name="th_m_lo_i_thu">Thêm Loại Thu</string>
+    <string name="nh_p_t_n_lo_i_thu">Nhập tên loại thu</string>
+    <string name="s_a_lo_i_thu">Sửa Loại Thu</string>
+    <string name="th_m_kho_n_thu">Thêm Khoản Thu</string>
+    <string name="nh_p_ti_n">Nhập tiền</string>
+    <string name="s_a_kho_n_thu">Sửa Khoản Thu</string>
+    <string name="nh_p_t_n_lo_i_chi">Nhập tên loại chi</string>
+    <string name="s_a_lo_i_chi">Sửa Loại Chi</string>
+</resources>
